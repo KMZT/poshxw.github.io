@@ -1,3 +1,6 @@
+* {
+    box-sizing: border-box;
+}
 body {
     font-family: Arial, sans-serif;
     background-color: #f5f5f5;
@@ -5,11 +8,12 @@ body {
     color: #333;
 }
 .container {
-    width: 900px;
+    max-width: 1000px;
     margin: 0 auto;
     background-color: white;
     padding: 20px;
 }
+/* Навигация */
 .navigation {
     background-color: #ddd;
     padding: 15px;
@@ -23,14 +27,16 @@ body {
 .navigation .link:hover {
     text-decoration: underline;
 }
+/* Главный блок */
 .hero {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     gap: 30px;
     padding: 30px 10px;
 }
 .hero-text {
-    width: 50%;
+    flex: 1;
 }
 .small-title {
     color: #777;
@@ -41,9 +47,11 @@ h1 {
 }
 .hero-image {
     width: 300px;
+    max-width: 100%;
     height: 300px;
     object-fit: cover;
 }
+/* Разделы */
 .section {
     padding: 25px 10px;
     border-top: 1px solid #ddd;
@@ -54,6 +62,7 @@ h2 {
 .facts-list {
     line-height: 1.8;
 }
+/* Таблица */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -67,14 +76,53 @@ td {
 th {
     background-color: #ddd;
 }
+/* Ссылки */
 .links a {
     display: block;
     margin: 10px 0;
     color: #2468a0;
 }
+/* Подвал */
 footer {
     text-align: center;
     padding: 20px;
     color: #777;
     border-top: 1px solid #ddd;
+}
+/* Телефон */
+@media (max-width: 600px) {
+    .container {
+        width: 100%;
+        padding: 10px;
+    }
+    .navigation {
+        padding: 10px;
+    }
+    .navigation .link {
+        display: block;
+        margin: 8px 0;
+    }
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px 5px;
+    }
+    .hero-image {
+        width: 250px;
+        height: 250px;
+    }
+    h1 {
+        font-size: 32px;
+    }
+    .section {
+        padding: 20px 5px;
+    }
+    /* Таблица можно прокручивать по горизонтали */
+    table {
+        font-size: 14px;
+    }
+    th,
+    td {
+        padding: 7px;
+    }
 }
